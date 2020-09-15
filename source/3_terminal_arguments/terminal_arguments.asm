@@ -1,11 +1,8 @@
-; GetMainArgs v1.01
-; Copyright © 2003 Theodor-Iulian Ciobanu
-
 format PE GUI 4.0
 entry start
 
 include 'win32a.inc'
-include 'cmd.inc'
+include 'terminal_arguments.inc'
 
   start:
         invoke  GetProcessHeap

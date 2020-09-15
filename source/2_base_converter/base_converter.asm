@@ -1,8 +1,3 @@
-
-; Base Converter Version 1.0
-; Copyright © Tommy Lillehagen, 2003.
-; All rights reserved.
-
 format PE GUI 4.0
 entry start
 

@@ -1,6 +1,3 @@
-
-; Component Object Model usage demonstration
-
 format PE GUI 4.0
 entry start
 

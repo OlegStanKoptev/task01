@@ -1,8 +1,3 @@
-; GetMainArgs v1.01
-; Copyright © 2003 Theodor-Iulian Ciobanu
-
-; uses heap instead of local
-
   GetMainArgs:
         pusha
         invoke  GetCommandLine  ;_argc - number of args, _argv - ptr to arg table

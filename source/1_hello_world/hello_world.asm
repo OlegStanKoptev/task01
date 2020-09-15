@@ -1,28 +1,28 @@
-format PE console                            ; Win32 portable executable console format
-entry _start                                 ; _start is the program's entry point
+format PE console
+entry _start
 
 include 'win32a.inc'
 
-section '.data' data readable writable       ; data definitions
+section '.data' data readable writable
 
 hello db "Privet, Mir!", 0
 stringformat db "%s", 0ah, 0
 
-section '.code' code readable executable     ; code
+section '.code' code readable executable
 
 _start:
-        invoke printf, stringformat, hello   ; call printf, defined in msvcrt.dll
-        invoke getchar                       ; wait for any key
-        invoke ExitProcess, 0                ; exit the process
+        invoke printf, stringformat, hello
+        invoke getchar
+        invoke ExitProcess, 0
 
-section '.imports' import data readable      ; data imports
+section '.imports' import data readable
 
-library kernel, 'kernel32.dll',\             ; link to kernel32.dll, msvcrt.dll
+library kernel, 'kernel32.dll',\
         msvcrt, 'msvcrt.dll'
 
-import kernel, \                             ; import ExitProcess from kernel32.dll
+import kernel, \
        ExitProcess, 'ExitProcess'
 
-import msvcrt, \                             ; import printf and getchar from msvcrt.dll
+import msvcrt, \ msvcrt.dll
        printf, 'printf',\
        getchar, '_fgetchar'
