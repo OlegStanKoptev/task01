@@ -5,13 +5,12 @@ include 'win32a.inc'
 
 section '.data' data readable writable
 
-hello db "Privet, Mir!", 0
-stringformat db "%s", 0ah, 0
+hello db "Privet mir!", 0
 
 section '.code' code readable executable
 
 _start:
-        invoke printf, stringformat, hello
+        invoke printf, hello
         invoke getchar
         invoke ExitProcess, 0
 
@@ -23,6 +22,6 @@ library kernel, 'kernel32.dll',\
 import kernel, \
        ExitProcess, 'ExitProcess'
 
-import msvcrt, \ msvcrt.dll
+import msvcrt,\
        printf, 'printf',\
        getchar, '_fgetchar'
